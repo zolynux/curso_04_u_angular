@@ -37,3 +37,5 @@ o puede ser más corto en comando:
 ```bash
 ng g c name
 ```
+
+## Generación de Componentes en Línea
