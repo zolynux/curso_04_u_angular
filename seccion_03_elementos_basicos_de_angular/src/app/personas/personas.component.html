@@ -15,11 +15,7 @@
       <app-persona></app-persona>
 
       <label>Título Persona</label>
-      <input
-        type="text"
-        class="form-control"
-        (input)="modificarTitulo($event)"
-      />
+      <input type="text" class="form-control" [(ngModel)]="titulo" />
       {{ titulo }}
     </div>
   </div>
