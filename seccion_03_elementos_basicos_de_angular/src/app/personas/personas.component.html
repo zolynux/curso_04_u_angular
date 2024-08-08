@@ -3,11 +3,24 @@
     <div class="col">
       <h1>Listado de Personas</h1>
       <br />
-      <button class="btn btn-primary" [disabled]="deshabilitar">
+      <button
+        class="btn btn-primary"
+        [disabled]="deshabilitar"
+        (click)="agregarPersona()"
+      >
         Agregar Persona
       </button>
       <br />
+      <p>{{ mensaje }}</p>
       <app-persona></app-persona>
+
+      <label>Título Persona</label>
+      <input
+        type="text"
+        class="form-control"
+        (input)="modificarTitulo($event)"
+      />
+      {{ titulo }}
     </div>
   </div>
 </div>
