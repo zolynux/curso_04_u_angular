@@ -4,11 +4,18 @@ import { Persona } from './persona.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PersonaComponent } from './persona/persona.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterOutlet, PersonaComponent],
+  imports: [
+    FormsModule,
+    CommonModule,
+    RouterOutlet,
+    PersonaComponent,
+    FormularioComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -19,13 +26,8 @@ export class AppComponent {
     new Persona('Laura', 'Lopez'),
     new Persona('Carlo', 'Ramirez'),
   ];
-  nombreInput: string = '';
-  apellidoInput: string = '';
 
-  agregarPersona() {
-    let persona1 = new Persona(this.nombreInput, this.apellidoInput);
-    this.personas.push(persona1);
-    this.nombreInput = '';
-    this.apellidoInput = '';
+  personaAgregada(persona: Persona) {
+    this.personas.push(persona);
   }
 }
